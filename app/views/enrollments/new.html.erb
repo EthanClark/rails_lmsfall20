@@ -1,0 +1,8 @@
+<h1>Add Enrollment</h1>
+<%= form_with(model: [@course, @enrollment], local: true, class: 'ui form') do |f| %>
+  <%= f.label :user %>
+  <%= f.select :user_id, @users.collect { |u| [u.full_name, u.id] }%>
+  <%= f.label :role %>
+  <%= f.select :role, ['ta', 'teacher', 'student'] %>
+  <%= f.submit %>
+<% end %>
